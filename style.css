@@ -1,0 +1,186 @@
+:root {
+  --user-color: #FF4500;
+  --user-color-btn: #FFA500;
+  --user-color-light: #F0E68C;
+  --computer-color: #800080;
+  --computer-color-light: #EE82EE;
+  --background-color-dsb: #808080;
+  --background-color: #000080;
+  --background-color-light: #ADD8E6;
+  --text-color: #F5F5F5;
+  --score-number: #00FF00;
+  --score-background: #111111;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Akaya Telivigala";
+  text-transform: uppercase;
+}
+
+body {
+  background: var(--background-color);
+  /* width: 90%; */
+  margin: 0 auto;
+  color: var(--text-color)
+}
+
+header {
+  background: var(--user-color-btn);
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  width: 90%;
+  margin: 1.5rem auto;
+}
+
+.placar {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+  visibility: hidden;
+}
+
+.nome {
+  width: 40%;
+  background: var(--user-color-btn);
+  color: var(--background-color);
+  text-transform: uppercase;
+}
+
+.placar-numero {
+  font-family: "Play";
+  width: 8%;
+  color: var(--score-number);
+  background: var(--score-background);
+}
+
+.titulo {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+#opcoes-usuario {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px auto;
+  /* border: red solid 1px; */
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.botao-opcao {
+  font-size: 5rem;
+  border: none;
+  background: var(--user-color-btn);
+  color: var(--text-color);
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.botao-opcao:hover, .botao-opcao:active {
+  background: var(--user-color);
+}
+
+.botao-opcao:disabled {
+  background: var(--background-color-dsb);
+}
+
+.display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+.icone {
+  font-size: 24vw;
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+.escolha {
+  width: 42vw;
+  height: 42vw;
+  /* margin: 1rem auto; */
+  text-align: center;
+  /* padding: 0.75rem; */
+  border-radius: 0.5rem;
+  transition: 0.5s;
+  background: var(--background-color-dsb);
+
+  /* display: flex; */
+  /* align-content: space-between; */
+}
+
+/* .escolha p {
+  font-size: 8rem;
+} */
+
+/* .escolha-usuario {
+  background: var(--user-color);
+}
+
+.escolha-computador {
+  background: var(--computer-color);
+} */
+
+.exibicao-vencedor {
+  background: var(--background-color);
+  display: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin: 1rem auto;
+  text-align: center;
+  color: var(--background-color);
+  transition: 0.5s;
+}
+
+footer {
+  /* text-align: center; */
+  width: 100%;
+  background: var(--user-color-btn);
+  color: var(--background-color);
+  padding: 1rem;
+  /* height: 20vh; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-content: space-around; */
+}
+
+/* footer p {
+  text-align: center;
+} */
+
+.dev {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.links {
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.links a {
+  color: var(--background-color-light);
+  margin: 0 auto;
+}

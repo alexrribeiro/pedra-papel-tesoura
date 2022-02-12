@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedra, Papel, Tesoura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Play:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="icons/style-icons.css">
+</head>
+<body>
+  <header>
+    Pedra, Papel, Tesoura
+  </header>
+  <main>
+    <div class="placar">
+      <div class="nome">Você</div>
+      <div class="placar-numero" id="placar-usuario">0</div>
+      <!-- <div class="vs">-</div> -->
+      <div class="placar-numero" id="placar-computador">0</div>
+      <div class="nome">Computador</div>
+    </div>
+    <h2 class="titulo">Escolha um dos três ícones:</h2>
+    <div id="opcoes-usuario">
+      <button type="button" onclick="jogarPedraPapelTesoura(0)" class="botao-opcao" title="Pedra">
+        <i class="icon-hand-grab-o"></i>
+      </button>
+      <button type="button" onclick="jogarPedraPapelTesoura(1)" class="botao-opcao" title="Papel">
+        <i class="icon-hand-paper-o"></i>
+      </button>
+      <button type="button" onclick="jogarPedraPapelTesoura(2)" class="botao-opcao" title="Tesoura">
+        <i class="icon-hand-scissors-o"></i>
+      </button>
+    </div>
+    <div class="display">
+      <div class="escolha escolha-usuario" id="painel-usuario">
+        <h2>Você</h2>
+        <p id="escolha-usuario">&nbsp;</p>
+      </div>
+      <div class="escolha escolha-computador" id="painel-computador">
+        <h2>Computador</h2>
+        <p id="escolha-computador">&nbsp;</p>
+      </div>
+      <div class="exibicao-vencedor" id="exibicao-vencedor">
+        <h2 id="vencedor-jogo">Boa sorte!</h2>
+      </div>
+    </div>
+    <hr>
+    <div style="background: #FF0000; padding: 8px; border-radius: 8px;">
+      <p style="color: #FFFFFF; text-align: center;">Observação: Esta página ainda está em desenvolvimento e, por enquanto, é melhor visualizada em dispositivos móveis.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="dev">
+      <span>Desenvolvido por Alex Ramos Ribeiro | &copy; <script type="text/javascript">document.write(new Date().getFullYear())</script></span>
+    </div>
+    <div class="links">
+      <a href="http://www.github.com/alexrribeiro" target="_blank">GH</a>
+      <a href="http://www.facebook.com/alexramosribeiro" target="_blank">FB</a>
+      <a href="http://www.instagram.com/alex.ramos.ribeiro" target="_blank">IG</a>
+      <a href="http://www.linkedin.com/in/alexrribeiro" target="_blank">IN</a>
+      <a href="http://www.twitter.com/alexrribeiro" target="_blank">TT</a>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="jogo.js"></script>
+</body>
+</html>
