@@ -6,6 +6,8 @@ const exibicaoVencedor = document.getElementById("vencedor-jogo");
 const areaVencedor = document.getElementById("exibicao-vencedor");
 const areaUsuario = document.getElementById("painel-usuario");
 const areaComputador = document.getElementById("painel-computador");
+const placarUsuario = document.getElementById("placar-usuario");
+const placarComputador = document.getElementById("placar-computador")
 
 function verificarOpcao(opcao) {
   switch (opcao) {
@@ -72,9 +74,6 @@ function verificarVencedor(opcaoUsuario, opcaoComputador) {
   else{
     vencedor = "Erro";
   }
-  
-  console.log("Usuario: ", pontosUsuario)
-  console.log("Computador: ", pontosComputador)
 
   return vencedor;
 }
@@ -88,6 +87,7 @@ function jogarPedraPapelTesoura(opcaoUsuario) {
   opcaoComputador = verificarOpcao(opcaoComputador);
 
   verificarVencedor(opcaoUsuario, opcaoComputador);
+  alterarPlacar();
   exibirIconesEscolhidos(iconeUsuario, iconeComputador);
   exibirNomeVencedor(vencedor);
 }
@@ -99,7 +99,7 @@ function exibirIconesEscolhidos(iconeUsuario, iconeComputador) {
 
 function exibirNomeVencedor(vencedor) {
   areaVencedor.style.display = "block";
-  
+
   if (vencedor == "Usuario") {
     exibicaoVencedor.innerHTML = "Você venceu!";
     areaVencedor.style.background = "var(--user-color-light)";
@@ -121,4 +121,15 @@ function exibirNomeVencedor(vencedor) {
   else {
     exibicaoVencedor.innerHTML = "Ocorreu algum erro";
   }
+}
+
+function alterarPlacar() {
+  placarUsuario.innerHTML = pontosUsuario;
+  placarComputador.innerHTML = pontosComputador;
+}
+
+function zerarPontuacao() {
+  pontosUsuario = 0;
+  pontosComputador = 0;
+  alterarPlacar();
 }

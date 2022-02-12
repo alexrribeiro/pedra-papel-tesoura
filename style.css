@@ -20,14 +20,14 @@
 
 body {
   background: var(--background-color);
-  /* width: 90%; */
   margin: 0 auto;
   color: var(--text-color)
 }
 
 header {
   background: var(--user-color-btn);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+  font-weight: bold;
   padding: 1rem;
   text-align: center;
 }
@@ -43,8 +43,6 @@ main {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-
-  visibility: hidden;
 }
 
 .nome {
@@ -61,8 +59,24 @@ main {
   background: var(--score-background);
 }
 
+.base-placar {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.botao-zerar {
+  font-size: 1.25rem;
+  border: none;
+  background: var(--background-color-light);
+  color: var(--background-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .titulo {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -71,11 +85,11 @@ main {
   justify-content: space-between;
   width: 100%;
   margin: 20px auto;
-  /* border: red solid 1px; */
 }
 
 h2 {
   font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .botao-opcao {
@@ -86,6 +100,7 @@ h2 {
   padding: 10px;
   width: 30%;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .botao-opcao:hover, .botao-opcao:active {
@@ -116,56 +131,34 @@ a {
 .escolha {
   width: 42vw;
   height: 42vw;
-  /* margin: 1rem auto; */
   text-align: center;
-  /* padding: 0.75rem; */
   border-radius: 0.5rem;
   transition: 0.5s;
   background: var(--background-color-dsb);
-
-  /* display: flex; */
-  /* align-content: space-between; */
 }
-
-/* .escolha p {
-  font-size: 8rem;
-} */
-
-/* .escolha-usuario {
-  background: var(--user-color);
-}
-
-.escolha-computador {
-  background: var(--computer-color);
-} */
 
 .exibicao-vencedor {
   background: var(--background-color);
   display: none;
   width: 100%;
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: 0.5rem;
   margin: 1rem auto;
   text-align: center;
   color: var(--background-color);
   transition: 0.5s;
 }
 
+#vencedor-jogo {
+  font-weight: bold;
+}
+
 footer {
-  /* text-align: center; */
   width: 100%;
   background: var(--user-color-btn);
   color: var(--background-color);
   padding: 1rem;
-  /* height: 20vh; */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-content: space-around; */
 }
-
-/* footer p {
-  text-align: center;
-} */
 
 .dev {
   text-align: center;
