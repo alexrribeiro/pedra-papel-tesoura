@@ -6,6 +6,7 @@
   --computer-color-light: #EE82EE;
   --background-color-dsb: #808080;
   --background-color: #000080;
+  --background-color-inter: #0000CC;
   --background-color-light: #ADD8E6;
   --text-color: #F5F5F5;
   --score-number: #00FF00;
@@ -38,25 +39,44 @@ main {
 }
 
 .placar {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   text-align: center;
   font-weight: bold;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .nome {
-  width: 40%;
+  width: 85%;
   background: var(--user-color-btn);
   color: var(--background-color);
+  border: var(--background-color) solid 1px;
   text-transform: uppercase;
 }
 
 .placar-numero {
   font-family: "Play";
-  width: 8%;
+  width: 15%;
   color: var(--score-number);
   background: var(--score-background);
+  border: var(--background-color) solid 1px;
+}
+
+#nome-usuario {
+  order: 0;
+}
+
+#placar-usuario {
+  order: 1;
+}
+
+#nome-computador {
+  order: 2;
+}
+
+#placar-computador {
+  order: 3;
 }
 
 .base-placar {
@@ -73,6 +93,12 @@ main {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.botao-zerar:hover {
+  background: var(--background-color-inter);
+  color: var(--background-color-light);
 }
 
 .titulo {
@@ -169,11 +195,17 @@ footer {
   text-align: center;
   padding: 0.5rem;
   display: flex;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 
 .links a {
   color: var(--background-color-light);
+  font-size: 2rem;
   margin: 0 auto;
+  transition: 0.5s;
+}
+
+.links a:hover {
+  color: var(--background-color-inter);
 }

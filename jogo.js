@@ -131,5 +131,8 @@ function alterarPlacar() {
 function zerarPontuacao() {
   pontosUsuario = 0;
   pontosComputador = 0;
+  areaComputador.style.background = 'var(--background-color-dsb)';
+  areaUsuario.style.background = 'var(--background-color-dsb)';
+  areaVencedor.style.display = 'none';
   alterarPlacar();
 }

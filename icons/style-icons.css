@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2ytnhz');
-  src:  url('fonts/icomoon.eot?2ytnhz#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2ytnhz') format('truetype'),
-    url('fonts/icomoon.woff?2ytnhz') format('woff'),
-    url('fonts/icomoon.svg?2ytnhz#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?i3opus');
+  src:  url('fonts/icomoon.eot?i3opus#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i3opus') format('truetype'),
+    url('fonts/icomoon.woff?i3opus') format('woff'),
+    url('fonts/icomoon.svg?i3opus#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak-as: never;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,18 +25,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-hand-scissors-o:before {
+.icon-youtube:before {
+  content: "\e905";
+}
+.icon-github:before {
+  content: "\e902";
+}
+.icon-brand:before {
+  content: "\e902";
+}
+.icon-octacat:before {
+  content: "\e902";
+}
+.icon-social:before {
+  content: "\e902";
+}
+.icon-linkedin:before {
+  content: "\e903";
+}
+.icon-brand1:before {
+  content: "\e903";
+}
+.icon-social1:before {
+  content: "\e903";
+}
+.icon-instagram:before {
+  content: "\e904";
+}
+.icon-brand2:before {
+  content: "\e904";
+}
+.icon-social2:before {
+  content: "\e904";
+}
+.icon-twitter:before {
+  content: "\e901";
+}
+.icon-facebook:before {
   content: "\e900";
 }
 .icon-hand-paper-o:before {
-  content: "\e901";
+  content: "\e90a";
 }
-.icon-hand-stop-o:before {
-  content: "\e901";
+.icon-sun-o:before {
+  content: "\e908";
+}
+.icon-moon-o:before {
+  content: "\e907";
+}
+.icon-hand-scissors-o:before {
+  content: "\e906";
 }
 .icon-hand-grab-o:before {
-  content: "\e902";
+  content: "\e909";
 }
 .icon-hand-rock-o:before {
-  content: "\e902";
+  content: "\e909";
 }
