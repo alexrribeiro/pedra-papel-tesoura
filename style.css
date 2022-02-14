@@ -5,6 +5,7 @@
   --computer-color: #800080;
   --computer-color-light: #EE82EE;
   --background-color-dsb: #808080;
+  --background-color-dsb-light: #BBBBBB;
   --background-color: #000080;
   --background-color-inter: #0000CC;
   --background-color-light: #ADD8E6;
@@ -18,6 +19,8 @@
   font-family: "Akaya Telivigala";
   text-transform: uppercase;
 }
+
+/* Otimizado para 480px */
 
 body {
   background: var(--background-color);
@@ -164,10 +167,12 @@ a {
 }
 
 .exibicao-vencedor {
-  background: var(--background-color);
-  display: none;
+  background: var(--background-color-dsb-light);
+  /* display: none; */
   width: 100%;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
   padding: 0.5rem;
   margin: 1rem auto;
   text-align: center;
@@ -195,12 +200,12 @@ footer {
   text-align: center;
   padding: 0.5rem;
   display: flex;
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
 }
 
 .links a {
-  color: var(--background-color-light);
+  color: var(--text-color);
   font-size: 2rem;
   margin: 0 auto;
   transition: 0.5s;
@@ -208,4 +213,75 @@ footer {
 
 .links a:hover {
   color: var(--background-color-inter);
+}
+
+/* Acima de 480 */
+
+@media screen and (min-width: 481px) {
+  .placar {
+    font-size: 1.75rem;
+    flex-wrap: nowrap;
+  }
+  
+  .nome {
+    width: 42%;
+  }
+  
+  .placar-numero {
+    width: 8%;
+  }
+
+  #placar-computador {
+    order: 2;
+  }
+  
+  #nome-computador {
+    order: 3;
+  }
+
+  .botao-opcao {
+    width: 27.5vw;
+    height: 27.5vw;
+    font-size: 8rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+}
+
+@media screen and (min-width: 1201px) {
+  .content {
+    border: green solid 1px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .titulo {
+    border: yellow solid 1px;
+  }
+
+  #opcoes-usuario {
+    flex-direction: column;
+    width: 150px;
+    height: 100%;
+    margin: 0 auto;
+    border: red solid 1px;
+  }
+
+  .botao-opcao {
+    width: 150px;
+    height: 150px;
+    font-size: 8rem;
+  }
+
+  .display {
+    width: calc(100% - 170px);
+    border: magenta solid 1px;
+  }  
+
+  .escolha {
+    width: 30vh;
+    height: 30vh;
+  }
 }

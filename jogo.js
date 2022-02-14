@@ -7,7 +7,8 @@ const areaVencedor = document.getElementById("exibicao-vencedor");
 const areaUsuario = document.getElementById("painel-usuario");
 const areaComputador = document.getElementById("painel-computador");
 const placarUsuario = document.getElementById("placar-usuario");
-const placarComputador = document.getElementById("placar-computador")
+const placarComputador = document.getElementById("placar-computador");
+// const botoesOpcao = document.querySelectorAll(".botao-opcao");
 
 function verificarOpcao(opcao) {
   switch (opcao) {
@@ -86,6 +87,10 @@ function jogarPedraPapelTesoura(opcaoUsuario) {
   iconeComputador = obterIcone(opcaoComputador);
   opcaoComputador = verificarOpcao(opcaoComputador);
 
+  document.getElementById("botao-pedra").setAttribute("disabled", true);
+  document.getElementById("botao-papel").setAttribute("disabled", true);
+  document.getElementById("botao-tesoura").setAttribute("disabled", true);
+
   verificarVencedor(opcaoUsuario, opcaoComputador);
   alterarPlacar();
   exibirIconesEscolhidos(iconeUsuario, iconeComputador);
@@ -101,25 +106,25 @@ function exibirNomeVencedor(vencedor) {
   areaVencedor.style.display = "block";
 
   if (vencedor == "Usuario") {
-    exibicaoVencedor.innerHTML = "Você venceu!";
+    exibicaoVencedor.innerHTML = "Você venceu!<br>Toque aqui para continuar";
     areaVencedor.style.background = "var(--user-color-light)";
     areaUsuario.style.background = "var(--user-color)";
     areaComputador.style.background = "var(--background-color-dsb)";
   }
   else if (vencedor == "Computador") {
-    exibicaoVencedor.innerHTML = "Você perdeu!";
+    exibicaoVencedor.innerHTML = "Você perdeu!<br>Toque aqui para continuar";
     areaVencedor.style.background = "var(--computer-color-light)";
     areaUsuario.style.background = "var(--background-color-dsb)";
     areaComputador.style.background = "var(--computer-color)";
   }
   else if (vencedor == "Ninguem") {
-    exibicaoVencedor.innerHTML = "Ninguém venceu!";
+    exibicaoVencedor.innerHTML = "Ninguém venceu!<br>Toque aqui para continuar";
     areaVencedor.style.background = "var(--background-color-light)";
     areaUsuario.style.background = "var(--background-color-dsb)";
     areaComputador.style.background = "var(--background-color-dsb)";
   }
   else {
-    exibicaoVencedor.innerHTML = "Ocorreu algum erro";
+    exibicaoVencedor.innerHTML = "Ocorreu algum erro<br>&nbsp;";
   }
 }
 
@@ -131,8 +136,22 @@ function alterarPlacar() {
 function zerarPontuacao() {
   pontosUsuario = 0;
   pontosComputador = 0;
+  resetDivs();
+  alterarPlacar();
+}
+
+function continuarJogo() {
+  document.getElementById("botao-pedra").removeAttribute("disabled");
+  document.getElementById("botao-papel").removeAttribute("disabled");
+  document.getElementById("botao-tesoura").removeAttribute("disabled");
+  resetDivs();
+}
+
+function resetDivs() {
   areaComputador.style.background = 'var(--background-color-dsb)';
   areaUsuario.style.background = 'var(--background-color-dsb)';
-  areaVencedor.style.display = 'none';
-  alterarPlacar();
+  areaVencedor.style.background = 'var(--background-color-dsb-light)';
+  exibicaoVencedor.innerHTML = "Boa sorte!<br>&nbsp;"
+  exibicaoUsuario.innerHTML = "&nbsp;";
+  exibicaoComputador.innerHTML = "&nbsp;";
 }

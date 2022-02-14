@@ -27,28 +27,30 @@
       <button type="button" onclick="zerarPontuacao()" class="botao-zerar">Zerar pontuação</button>
     </div>
     <h2 class="titulo">Escolha um dos três ícones:</h2>
-    <div id="opcoes-usuario">
-      <button type="button" onclick="jogarPedraPapelTesoura(0)" class="botao-opcao" title="Pedra">
-        <i class="icon-hand-grab-o"></i>
-      </button>
-      <button type="button" onclick="jogarPedraPapelTesoura(1)" class="botao-opcao" title="Papel">
-        <i class="icon-hand-paper-o"></i>
-      </button>
-      <button type="button" onclick="jogarPedraPapelTesoura(2)" class="botao-opcao" title="Tesoura">
-        <i class="icon-hand-scissors-o"></i>
-      </button>
-    </div>
-    <div class="display">
-      <div class="escolha escolha-usuario" id="painel-usuario">
-        <h2>Você</h2>
-        <p id="escolha-usuario">&nbsp;</p>
+    <div class="content">
+      <div id="opcoes-usuario">
+        <button type="button" onclick="jogarPedraPapelTesoura(0)" class="botao-opcao" id="botao-pedra" title="Pedra">
+          <i class="icon-hand-grab-o"></i>
+        </button>
+        <button type="button" onclick="jogarPedraPapelTesoura(1)" class="botao-opcao" id="botao-papel" title="Papel">
+          <i class="icon-hand-paper-o"></i>
+        </button>
+        <button type="button" onclick="jogarPedraPapelTesoura(2)" class="botao-opcao" id="botao-tesoura" title="Tesoura">
+          <i class="icon-hand-scissors-o"></i>
+        </button>
       </div>
-      <div class="escolha escolha-computador" id="painel-computador">
-        <h2>Computador</h2>
-        <p id="escolha-computador">&nbsp;</p>
-      </div>
-      <div class="exibicao-vencedor" id="exibicao-vencedor">
-        <h2 id="vencedor-jogo">Boa sorte!</h2>
+      <div class="display">
+        <div class="escolha escolha-usuario" id="painel-usuario">
+          <h2>Você</h2>
+          <p id="escolha-usuario">&nbsp;</p>
+        </div>
+        <div class="escolha escolha-computador" id="painel-computador">
+          <h2>Computador</h2>
+          <p id="escolha-computador">&nbsp;</p>
+        </div>
+        <button type="button" class="exibicao-vencedor" id="exibicao-vencedor" onclick="continuarJogo()">
+          <h2 id="vencedor-jogo">Boa sorte!<br>&nbsp;</h2>
+        </button>
       </div>
     </div>
     <hr>
