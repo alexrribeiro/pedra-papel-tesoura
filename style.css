@@ -38,6 +38,7 @@ header {
 
 main {
   width: 90%;
+  max-width: 1400px;
   margin: 1.5rem auto;
 }
 
@@ -215,6 +216,14 @@ footer {
   color: var(--background-color-inter);
 }
 
+.separador {
+  display: none;
+}
+
+.observacao {
+  display: none;
+}
+
 /* Acima de 480 */
 
 @media screen and (min-width: 481px) {
@@ -247,7 +256,16 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
+  .separador {
+    display: block;
+  }
 
+  .observacao {
+    display: block;
+    background: red;
+    padding: 10px;
+    border-radius: 5px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
@@ -283,5 +301,10 @@ footer {
   .escolha {
     width: 30vh;
     height: 30vh;
+  }
+
+  .exibicao-vencedor {
+    margin: 0.5 auto;
+    padding: 0;
   }
 }
