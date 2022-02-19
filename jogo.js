@@ -136,22 +136,18 @@ function alterarPlacar() {
 function zerarPontuacao() {
   pontosUsuario = 0;
   pontosComputador = 0;
-  resetDivs();
   alterarPlacar();
+  continuarJogo();
 }
 
 function continuarJogo() {
-  document.getElementById("botao-pedra").removeAttribute("disabled");
-  document.getElementById("botao-papel").removeAttribute("disabled");
-  document.getElementById("botao-tesoura").removeAttribute("disabled");
-  resetDivs();
-}
-
-function resetDivs() {
   areaComputador.style.background = 'var(--background-color-dsb)';
   areaUsuario.style.background = 'var(--background-color-dsb)';
   areaVencedor.style.background = 'var(--background-color-dsb-light)';
   exibicaoVencedor.innerHTML = "Boa sorte!<br>&nbsp;"
   exibicaoUsuario.innerHTML = "&nbsp;";
   exibicaoComputador.innerHTML = "&nbsp;";
+  document.getElementById("botao-pedra").removeAttribute("disabled");
+  document.getElementById("botao-papel").removeAttribute("disabled");
+  document.getElementById("botao-tesoura").removeAttribute("disabled");
 }

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Play:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="icons/style-icons.css">
 </head>
@@ -26,7 +27,6 @@
     <div class="base-placar">
       <button type="button" onclick="zerarPontuacao()" class="botao-zerar">Zerar pontuação</button>
     </div>
-    <h2 class="titulo">Escolha um dos três ícones:</h2>
     <div class="content">
       <div id="opcoes-usuario">
         <button type="button" onclick="jogarPedraPapelTesoura(0)" class="botao-opcao" id="botao-pedra" title="Pedra">
@@ -40,6 +40,9 @@
         </button>
       </div>
       <div class="display">
+        <button type="button" class="exibicao-vencedor" id="exibicao-vencedor" onclick="continuarJogo()">
+          <h2 id="vencedor-jogo">Boa sorte!<br>Toque em um dos botões</h2>
+        </button>
         <div class="escolha escolha-usuario" id="painel-usuario">
           <h2>Você</h2>
           <p id="escolha-usuario">&nbsp;</p>
@@ -48,19 +51,12 @@
           <h2>Computador</h2>
           <p id="escolha-computador">&nbsp;</p>
         </div>
-        <button type="button" class="exibicao-vencedor" id="exibicao-vencedor" onclick="continuarJogo()">
-          <h2 id="vencedor-jogo">Boa sorte!<br>&nbsp;</h2>
-        </button>
       </div>
-    </div>
-    <hr class="separador">
-    <div class="observacao">
-      <p style="color: #FFFFFF; text-align: center;">Observação: Esta página ainda está em desenvolvimento e, por enquanto, é melhor visualizada em dispositivos móveis.</p>
     </div>
   </main>
   <footer>
     <div class="dev">
-      <span>&copy; <script type="text/javascript">document.write(new Date().getFullYear())</script> | Alex Ramos Ribeiro</span>
+      <span>&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> | Alex Ramos Ribeiro</span>
     </div>
     <div class="links">
       <a href="http://www.github.com/alexrribeiro" target="_blank">

@@ -16,7 +16,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Akaya Telivigala";
+  font-family: "Caveat";
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -117,12 +118,21 @@ main {
   margin: 20px auto;
 }
 
+p {
+  margin: 0;
+}
+
 h2 {
   font-size: 1.5rem;
   font-weight: normal;
+  margin: 0;
 }
 
 .botao-opcao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 5rem;
   border: none;
   background: var(--user-color-btn);
@@ -159,6 +169,10 @@ a {
 }
 
 .escolha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   width: 42vw;
   height: 42vw;
   text-align: center;
@@ -175,7 +189,7 @@ a {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  margin: 1rem auto;
+  margin: 0 auto 1rem;
   text-align: center;
   color: var(--background-color);
   transition: 0.5s;
@@ -256,35 +270,30 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
-  .separador {
-    display: block;
-  }
-
-  .observacao {
-    display: block;
-    background: red;
-    padding: 10px;
-    border-radius: 5px;
-  }
-}
-
-@media screen and (min-width: 1201px) {
-  .content {
-    border: green solid 1px;
+  footer {
     display: flex;
     justify-content: space-between;
   }
 
-  .titulo {
-    border: yellow solid 1px;
+  .links {
+    width: 35%;
+    max-width: 300px;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .content {
+    display: flex;
+    height: 470px;
+    justify-content: space-between;
   }
 
   #opcoes-usuario {
     flex-direction: column;
     width: 150px;
     height: 100%;
-    margin: 0 auto;
-    border: red solid 1px;
+    margin: 0;
   }
 
   .botao-opcao {
@@ -295,16 +304,32 @@ footer {
 
   .display {
     width: calc(100% - 170px);
-    border: magenta solid 1px;
+    flex-wrap: nowrap;
+    align-items: center;
   }  
 
   .escolha {
-    width: 30vh;
-    height: 30vh;
+    width: 31%;
+    height: 100%;
+  }
+
+  .escolha-usuario {
+    order: 1;
+  }
+
+  .escolha-computador {
+    order: 3;
   }
 
   .exibicao-vencedor {
+    order: 2;
+    width: 36%;
+    height: 120px;
     margin: 0.5 auto;
     padding: 0;
+  }
+
+  .icone {
+    font-size: 20vw;
   }
 }
