@@ -11,9 +11,25 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="settings.css">
   <link rel="stylesheet" href="icons/style-icons.css">
 </head>
 <body>
+  <div id="settings-bg" class="settings"><!-- Para exibir colocar a classe show -->
+    <div id="settings-body" class="settings show">
+      <h2 class="settings-title">Bem vindo(a)! Preencha para começar:</h2>
+      <form action="#" method="post">
+        <label for="txtNome">Qual é o seu nome?&nbsp;
+        <input type="text" name="nome" id="txtNome" maxlength="15" autofocus></label>
+        <legend>máx. 15 caracteres</legend>
+        <label for="txtMaxPontos">Jogar até alguém atingir&nbsp;
+        <input type="number" name="maxpontos" id="txtMaxPontos" min="0" value="10">
+        &nbsp;pontos.</label>
+        <legend>Para "modo infinito" deixe a caixa acima com o número 0 (zero).</legend>
+        <button type="button" class="settings-button">Jogar!</button>
+      </form>
+    </div>
+  </div>
   <header>
     <div class="header-container">
       <div class="header-brand">
