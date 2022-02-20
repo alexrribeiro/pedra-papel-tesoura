@@ -21,60 +21,35 @@
         <span>Papel</span>
         <span>Tesoura</span>
       </div>
-      <div class="header-options">
-        <a href="comojogar.html" class="botao-header" title="Como jogar?">
+      <div id="options-como-jogar" class="header-options">
+        <a href="index.html" class="botao-header" title="Página Inicial">
           <span class="material-icons-round">
-            info
-          </span>
-        </a>
-        <a onclick="javascript:alert('Em breve estará disponível');" class="botao-header" title="Configurações">
-          <span class="material-icons-round">
-            settings
-          </span>
-        </a>
-        <a onclick="zerarPontuacao()" class="botao-header" title="Zerar Pontuação">
-          <span class="material-icons-round">
-            restart_alt
+            home
           </span>
         </a>
       </div>
     </div>
   </header>
   <main>
-    <div class="placar">
-      <div class="placar-nome" id="nome-usuario">Você</div>
-      <div class="placar-numero" id="placar-usuario">0</div>
-      <div class="placar-numero" id="placar-computador">0</div>
-      <div class="placar-nome" id="nome-computador">Computador</div>
-    </div>
-    <div class="base-placar">
-    </div>
-    <div class="content">
-      <div id="opcoes-usuario">
-        <button type="button" onclick="jogarPedraPapelTesoura(0)" class="botao-opcao" id="botao-pedra" title="Pedra">
-          <i class="icon-hand-grab-o"></i>
-        </button>
-        <button type="button" onclick="jogarPedraPapelTesoura(1)" class="botao-opcao" id="botao-papel" title="Papel">
-          <i class="icon-hand-paper-o"></i>
-        </button>
-        <button type="button" onclick="jogarPedraPapelTesoura(2)" class="botao-opcao" id="botao-tesoura" title="Tesoura">
-          <i class="icon-hand-scissors-o"></i>
-        </button>
-      </div>
-      <div class="exibicao">
-        <button type="button" class="exibicao-vencedor" id="exibicao-vencedor" onclick="continuarJogo()">
-          <h2 id="vencedor-jogo">Boa sorte!<br>Toque em um dos botões</h2>
-        </button>
-        <div class="escolha escolha-usuario" id="painel-usuario">
-          <h2>Você</h2>
-          <p id="escolha-usuario">&nbsp;</p>
-        </div>
-        <div class="escolha escolha-computador" id="painel-computador">
-          <h2>Computador</h2>
-          <p id="escolha-computador">&nbsp;</p>
-        </div>
-      </div>
-    </div>
+    <!-- <div class="content"> -->
+      <h2 class="como-jogar-destaque">Como jogar?</h2>
+      <ol>
+        <li>Escolha entre um dos três ícones: 
+          <br /><i class="icon-hand-grab-o como-jogar-destaque"></i> significa <span class="como-jogar-destaque">pedra</span>, 
+          <br /><i class="icon-hand-paper-o como-jogar-destaque"></i> significa <span class="como-jogar-destaque">papel</span> e 
+          <br /><i class="icon-hand-scissors-o como-jogar-destaque"></i> significa <span class="como-jogar-destaque">tesoura</span>.</li>
+        <li>Após você clicar em um botão o computador também escolhe aleatoriamente uma das três opções. Tanto a sua escolha quanto a do computador aparecem no painel.</li>
+        <li>Depois de aparecer a sua escolha, a do computador e quem foi o vencedor, toque no botão que indica se você venceu, perdeu ou empatou.</li>
+        <li>Agora é só jogar novamente!</li>
+      </ol>
+      <h2 class="como-jogar-titulo">Regras do jogo</h2>
+      <ul>
+        <li><span class="como-jogar-destaque">Se os dois escolherem o mesmo: </span>Ninguém vence;</li>
+        <li><span class="como-jogar-destaque">Um escolheu pedra e o outro escolheu papel: </span>Papel vence.</li>
+        <li><span class="como-jogar-destaque">Um escolheu papel e o outro escolheu tesoura: </span>Tesoura vence.</li>
+        <li><span class="como-jogar-destaque">Um escolheu tesoura e o outro escolheu pedra: </span>Pedra vence.</li>
+      </ul>
+    <!-- </div> -->
   </main>
   <footer>
     <div class="footer-container">

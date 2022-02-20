@@ -22,6 +22,10 @@
   text-transform: uppercase;
 }
 
+html {
+  font-size: 16px;
+}
+
 /* Otimizado para 480px */
 
 body {
@@ -94,6 +98,7 @@ a {
 main {
   width: 90%;
   max-width: 1400px;
+  min-height: calc(100vh - 130px);
   margin: 1.5rem auto;
 }
 
@@ -183,6 +188,10 @@ h2 {
   font-size: 1.5rem;
   font-weight: normal;
   margin: 0;
+}
+
+.como-jogar-destaque {
+  color: var(--user-color-btn);
 }
 
 p {
@@ -322,6 +331,14 @@ footer {
 
   .botao-header:nth-child(2) {
     margin: 0;
+  }
+
+  #options-como-jogar {
+    justify-content: flex-end;
+  }
+
+  main {
+    min-height: calc(100vh - 169px);
   }
 
   footer {
