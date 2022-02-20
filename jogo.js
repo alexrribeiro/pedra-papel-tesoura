@@ -144,7 +144,7 @@ function continuarJogo() {
   areaComputador.style.background = 'var(--background-color-dsb)';
   areaUsuario.style.background = 'var(--background-color-dsb)';
   areaVencedor.style.background = 'var(--background-color-dsb-light)';
-  exibicaoVencedor.innerHTML = "Boa sorte!<br>&nbsp;"
+  exibicaoVencedor.innerHTML = "Boa sorte!<br>Toque em um dos botões";
   exibicaoUsuario.innerHTML = "&nbsp;";
   exibicaoComputador.innerHTML = "&nbsp;";
   document.getElementById("botao-pedra").removeAttribute("disabled");

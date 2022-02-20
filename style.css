@@ -1,4 +1,5 @@
 :root {
+  --button-header-color: #FFD700;
   --user-color: #FF4500;
   --user-color-btn: #FFA500;
   --user-color-light: #F0E68C;
@@ -37,6 +38,59 @@ header {
   text-align: center;
 }
 
+.header-container, .footer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.header-brand {
+  padding-bottom: 1rem;
+}
+
+.header-brand span {
+  transform: rotate(-15deg);
+  display: inline-block;
+}
+
+.header-options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.botao-header {
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background: var(--user-color-light);
+  color: var(--background-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.botao-header span {
+  font-family: 'Material Icons';
+  font-size: 2rem;
+}
+
+.botao-header:nth-child(2) {
+  margin: 0 1rem;
+}
+
+.botao-header:hover {
+  background: var(--button-header-color);
+  /* color: var(--background-color-dsb-light); */
+}
+
+a {
+  text-decoration: none;
+}
+
 main {
   width: 90%;
   max-width: 1400px;
@@ -52,7 +106,7 @@ main {
   justify-content: space-between;
 }
 
-.nome {
+.placar-nome {
   width: 85%;
   background: var(--user-color-btn);
   color: var(--background-color);
@@ -90,42 +144,16 @@ main {
   text-align: center;
 }
 
-.botao-zerar {
-  font-size: 1.25rem;
-  border: none;
-  background: var(--background-color-light);
-  color: var(--background-color);
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.botao-zerar:hover {
-  background: var(--background-color-inter);
-  color: var(--background-color-light);
-}
-
-.titulo {
+/* .titulo {
   font-size: 1.5rem;
   text-align: center;
-}
+} */
 
 #opcoes-usuario {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin: 20px auto;
-}
-
-p {
-  margin: 0;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin: 0;
 }
 
 .botao-opcao {
@@ -151,15 +179,21 @@ h2 {
   background: var(--background-color-dsb);
 }
 
-.display {
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.exibicao {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-a {
-  text-decoration: none;
 }
 
 .icone {
@@ -230,14 +264,6 @@ footer {
   color: var(--background-color-inter);
 }
 
-.separador {
-  display: none;
-}
-
-.observacao {
-  display: none;
-}
-
 /* Acima de 480 */
 
 @media screen and (min-width: 481px) {
@@ -246,7 +272,7 @@ footer {
     flex-wrap: nowrap;
   }
   
-  .nome {
+  .placar-nome {
     width: 42%;
   }
   
@@ -267,9 +293,37 @@ footer {
     height: 27.5vw;
     font-size: 8rem;
   }
+
+  h2 {
+    font-size: 1.75rem;
+  }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
+  header {
+    font-size: 2rem;
+  }
+
+  .header-container, .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1400px;
+  }
+
+  .header-brand {
+    padding-bottom: 0;
+  }
+
+  .header-options {
+    justify-content: space-between;
+    width: 10rem;
+  }
+
+  .botao-header:nth-child(2) {
+    margin: 0;
+  }
+
   footer {
     display: flex;
     justify-content: space-between;
@@ -302,7 +356,7 @@ footer {
     font-size: 8rem;
   }
 
-  .display {
+  .exibicao {
     width: calc(100% - 170px);
     flex-wrap: nowrap;
     align-items: center;

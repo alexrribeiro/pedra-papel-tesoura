@@ -7,25 +7,48 @@
   <title>Pedra, Papel, Tesoura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Play:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@400;700&family=Play:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="icons/style-icons.css">
 </head>
 <body>
   <header>
-    Pedra, Papel, Tesoura
+    <div class="header-container">
+      <div class="header-brand">
+        <span>Pedra</span>
+        <span>Papel</span>
+        <span>Tesoura</span>
+      </div>
+      <div class="header-options">
+        <!-- <a href="#" class="botao-header" title="Como jogar?">
+          <span class="material-icons-round">
+            info
+          </span>
+        </a>
+        <a onclick="" class="botao-header" title="Configurações">
+          <span class="material-icons-round">
+            settings
+          </span>
+        </a> -->
+        <a onclick="zerarPontuacao()" class="botao-header" title="Zerar Pontuação">
+          <span class="material-icons-round">
+            restart_alt
+          </span>
+        </a>
+      </div>
+    </div>
   </header>
   <main>
     <div class="placar">
-      <div class="nome" id="nome-usuario">Você</div>
+      <div class="placar-nome" id="nome-usuario">Você</div>
       <div class="placar-numero" id="placar-usuario">0</div>
       <!-- <div class="vs">-</div> -->
       <div class="placar-numero" id="placar-computador">0</div>
-      <div class="nome" id="nome-computador">Computador</div>
+      <div class="placar-nome" id="nome-computador">Computador</div>
     </div>
     <div class="base-placar">
-      <button type="button" onclick="zerarPontuacao()" class="botao-zerar">Zerar pontuação</button>
     </div>
     <div class="content">
       <div id="opcoes-usuario">
@@ -39,7 +62,7 @@
           <i class="icon-hand-scissors-o"></i>
         </button>
       </div>
-      <div class="display">
+      <div class="exibicao">
         <button type="button" class="exibicao-vencedor" id="exibicao-vencedor" onclick="continuarJogo()">
           <h2 id="vencedor-jogo">Boa sorte!<br>Toque em um dos botões</h2>
         </button>
@@ -55,25 +78,27 @@
     </div>
   </main>
   <footer>
-    <div class="dev">
-      <span>&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> | Alex Ramos Ribeiro</span>
-    </div>
-    <div class="links">
-      <a href="http://www.github.com/alexrribeiro" target="_blank">
-        <i class="icon-github"></i>
-      </a>
-      <a href="http://www.facebook.com/alexramosribeiro" target="_blank">
-        <i class="icon-facebook"></i>
-      </a>
-      <a href="http://www.instagram.com/alex.ramos.ribeiro" target="_blank">
-        <i class="icon-instagram"></i>
-      </a>
-      <a href="http://www.linkedin.com/in/alexrribeiro" target="_blank">
-        <i class="icon-linkedin"></i>
-      </a>
-      <a href="http://www.twitter.com/alexrribeiro" target="_blank">
-        <i class="icon-twitter"></i>
-      </a>
+    <div class="footer-container">
+      <div class="dev">
+        <span>&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> | Alex Ramos Ribeiro</span>
+      </div>
+      <div class="links">
+        <a href="http://www.github.com/alexrribeiro" target="_blank">
+          <i class="icon-github"></i>
+        </a>
+        <a href="http://www.facebook.com/alexramosribeiro" target="_blank">
+          <i class="icon-facebook"></i>
+        </a>
+        <a href="http://www.instagram.com/alex.ramos.ribeiro" target="_blank">
+          <i class="icon-instagram"></i>
+        </a>
+        <a href="http://www.linkedin.com/in/alexrribeiro" target="_blank">
+          <i class="icon-linkedin"></i>
+        </a>
+        <a href="http://www.twitter.com/alexrribeiro" target="_blank">
+          <i class="icon-twitter"></i>
+        </a>
+      </div>
     </div>
   </footer>
 
