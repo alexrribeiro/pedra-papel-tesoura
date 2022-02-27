@@ -131,13 +131,15 @@ function exibirCampeao() {
   if (nomeCampeao == 'user') {
     campeaoBody.classList.remove('winner-computer');
     campeaoBody.classList.add('winner-user');
-    campeaoBody.innerHTML = '<h2>Parabéns! Você venceu!</h2>';
+    campeaoBody.innerHTML = '<i class="fa-solid fa-trophy trofeu"></i>';
+    campeaoBody.innerHTML += '<h2>Parabéns! Você venceu!</h2>';
     classBotao = 'winner-user-button'
   }
   else if (nomeCampeao == 'computer') {
     campeaoBody.classList.remove('winner-user');
     campeaoBody.classList.add('winner-computer');
-    campeaoBody.innerHTML = '<h2>Que pena! Você perdeu!</h2>';
+    campeaoBody.innerHTML = '<i class="fa-solid fa-laptop-code laptop"></i>'
+    campeaoBody.innerHTML += '<h2>Que pena! Você perdeu!</h2>';
     classBotao = 'winner-computer-button'
   }
   campeaoBody.innerHTML += `<p>${nomeUsuario} ${pontosUsuario} x ${pontosComputador} Computador`;

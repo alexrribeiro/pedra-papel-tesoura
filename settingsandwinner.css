@@ -27,11 +27,33 @@
   z-index: 2;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-size: 1.25rem;
   border-radius: 0.5rem;
   width: 50%;
   max-width: 400px;
   padding: 1rem;
   text-align: center;
+}
+
+.trofeu {
+  font-size: 5rem;
+  color: var(--button-header-color);
+  animation: entrada 1s;
+}
+
+.laptop {
+  font-size: 5rem;
+  color: var(--background-color-dsb);
+  animation: entrada 1s;
+}
+
+@keyframes entrada {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .winner-user {
