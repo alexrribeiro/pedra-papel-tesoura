@@ -1,5 +1,6 @@
-let opcao, opcaoComputador, opcaoUsuario, resultado, vencedor, icone, iconeUsuario, iconeComputador;
-let pontosUsuario = 0, pontosComputador = 0;
+var opcao, opcaoComputador, opcaoUsuario, resultado, vencedor, nomeUsuario, nomeCampeao, icone, iconeUsuario, iconeComputador;
+var pontosUsuario = 0, pontosComputador = 0, pontosLider = 0;
+const painelNomeUsuario = document.getElementById("nome-usuario");
 const exibicaoUsuario = document.getElementById("escolha-usuario");
 const exibicaoComputador = document.getElementById("escolha-computador");
 const exibicaoVencedor = document.getElementById("vencedor-jogo");
@@ -8,6 +9,10 @@ const areaUsuario = document.getElementById("painel-usuario");
 const areaComputador = document.getElementById("painel-computador");
 const placarUsuario = document.getElementById("placar-usuario");
 const placarComputador = document.getElementById("placar-computador");
+const configuracoes = document.getElementById("settings-bg");
+const campeao = document.getElementById("winner-bg");
+const campeaoBody = document.getElementById("winner-body");
+const nomeUsuarioPainel = document.getElementById("nome-usuario-painel");
 // const botoesOpcao = document.querySelectorAll(".botao-opcao");
 
 function verificarOpcao(opcao) {
@@ -76,6 +81,13 @@ function verificarVencedor(opcaoUsuario, opcaoComputador) {
     vencedor = "Erro";
   }
 
+  if (pontosUsuario > pontosComputador) {
+    pontosLider = pontosUsuario;
+  }
+  else if (pontosComputador > pontosLider) {
+    pontosLider = pontosComputador;
+  }
+
   return vencedor;
 }
 
@@ -91,15 +103,54 @@ function jogarPedraPapelTesoura(opcaoUsuario) {
   document.getElementById("botao-papel").setAttribute("disabled", true);
   document.getElementById("botao-tesoura").setAttribute("disabled", true);
 
-  verificarVencedor(opcaoUsuario, opcaoComputador);
-  alterarPlacar();
-  exibirIconesEscolhidos(iconeUsuario, iconeComputador);
-  exibirNomeVencedor(vencedor);
+  var limite = determinarMaximoPontos();
+  // console.log('limite', limite);
+  
+  while (pontosLider != limite) {
+    verificarVencedor(opcaoUsuario, opcaoComputador);
+    alterarPlacar();
+    exibirIconesEscolhidos(iconeUsuario, iconeComputador);
+    exibirNomeVencedor(vencedor);
+    if (pontosLider == limite) {
+      pontosLider == pontosUsuario ? nomeCampeao = 'user' : nomeCampeao = 'computer';
+      exibirCampeao();
+      zerarPontuacao();
+    }
+    break;
+  }
+
+
+  // console.log('pts usuario', pontosUsuario, 'pts computador', pontosComputador, 'pts lider', pontosLider);
+}
+
+function exibirCampeao() {
+  let classBotao;
+  campeao.classList.add('show');
+  console.log(nomeCampeao);
+
+  if (nomeCampeao == 'user') {
+    campeaoBody.classList.remove('winner-computer');
+    campeaoBody.classList.add('winner-user');
+    campeaoBody.innerHTML = '<h2>Parabéns! Você venceu!</h2>';
+    classBotao = 'winner-user-button'
+  }
+  else if (nomeCampeao == 'computer') {
+    campeaoBody.classList.remove('winner-user');
+    campeaoBody.classList.add('winner-computer');
+    campeaoBody.innerHTML = '<h2>Que pena! Você perdeu!</h2>';
+    classBotao = 'winner-computer-button'
+  }
+  campeaoBody.innerHTML += `<p>${nomeUsuario} ${pontosUsuario} x ${pontosComputador} Computador`;
+  campeaoBody.innerHTML += `<button class='button-panels ${classBotao}' onclick='sairPainelCampeao()'>OK</button>`
 }
 
 function exibirIconesEscolhidos(iconeUsuario, iconeComputador) {
   exibicaoUsuario.innerHTML = "<p><i class='" + iconeUsuario + " icone'></i></p>";
   exibicaoComputador.innerHTML = "<p><i class='" + iconeComputador + " icone'></i></p>";
+}
+
+function sairPainelCampeao() {
+  campeao.classList.remove('show');
 }
 
 function exibirNomeVencedor(vencedor) {
@@ -136,6 +187,7 @@ function alterarPlacar() {
 function zerarPontuacao() {
   pontosUsuario = 0;
   pontosComputador = 0;
+  pontosLider = 0;
   alterarPlacar();
   continuarJogo();
 }
@@ -150,4 +202,31 @@ function continuarJogo() {
   document.getElementById("botao-pedra").removeAttribute("disabled");
   document.getElementById("botao-papel").removeAttribute("disabled");
   document.getElementById("botao-tesoura").removeAttribute("disabled");
+}
+
+function abrirConfiguracoes() {
+  configuracoes.classList.add('show');
+  document.formsettings.nome.focus();
+}
+
+function configurarJogo() {
+  nomeUsuario = document.getElementById("txtNome").value;
+  if (nomeUsuario == '') {
+    nomeUsuario = "Você";
+  }
+  painelNomeUsuario.innerHTML = nomeUsuario;
+  nomeUsuarioPainel.innerHTML = nomeUsuario;
+}
+
+function determinarMaximoPontos() {
+  var maximoPontos = document.getElementById("txtMaxPontos").value;
+  if (maximoPontos == 0) {
+    maximoPontos = -1;
+  }
+  return maximoPontos;
+}
+
+function voltarProJogo() {
+  configurarJogo();
+  configuracoes.classList.remove('show');
 }

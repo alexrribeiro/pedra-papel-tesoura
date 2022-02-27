@@ -1,4 +1,4 @@
-#settings-bg {
+#settings-bg, #winner-bg {
   background-color: rgba(34, 34, 34, 0.75);
   position: absolute;
   z-index: 1;
@@ -22,7 +22,37 @@
   box-shadow: 0 0 30px black;
 }
 
-.settings {
+#winner-body {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  width: 50%;
+  max-width: 400px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.winner-user {
+  border: var(--user-color) solid 3px;
+  box-shadow: 0 0 30px var(--user-color);
+}
+
+.winner-user h2 {
+  color: var(--user-color-light);
+}
+
+.winner-computer {
+  border: var(--computer-color) solid 3px;
+  box-shadow: 0 0 30px var(--computer-color);
+}
+
+.winner-computer h2 {
+  color: var(--computer-color-light);
+}
+
+.settings, .winner {
   display: none;
 }
 
@@ -76,8 +106,7 @@ input:focus {
   width: 4rem;
 }
 
-.settings-button {
-  background-color: var(--user-color-btn);
+.button-panels {
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
@@ -90,8 +119,20 @@ input:focus {
   cursor: pointer;
 }
 
-.settings-button:hover {
+.settings-button, .winner-user-button {
+  background-color: var(--user-color-btn);
+}
+
+.winner-computer-button {
+  background-color: var(--computer-color-light);
+}
+
+.settings-button:hover, .winner-user-button:hover {
   background-color: var(--user-color);
+}
+
+.winner-computer-button:hover {
+  background-color: var(--computer-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -109,5 +150,11 @@ input:focus {
 @media screen and (min-width: 1200px) {
   #settings-body {
     width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #winner-body {
+    width: 75%;
   }
 }

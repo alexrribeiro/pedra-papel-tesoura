@@ -11,23 +11,28 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="settingsandwinner.css">
   <link rel="stylesheet" href="icons/style-icons.css">
 </head>
-<body>
+<body onload="abrirConfiguracoes()">
   <div id="settings-bg" class="settings"><!-- Para exibir colocar a classe show -->
     <div id="settings-body" class="settings show">
       <h2 class="settings-title">Bem vindo(a)! Preencha para começar:</h2>
-      <form action="#" method="post">
+      <form action="#" method="post" name="formsettings">
         <label for="txtNome">Qual é o seu nome?&nbsp;
-        <input type="text" name="nome" id="txtNome" maxlength="15" autofocus></label>
+        <input type="text" name="nome" id="txtNome" maxlength="15"></label>
         <legend>máx. 15 caracteres</legend>
         <label for="txtMaxPontos">Jogar até alguém atingir&nbsp;
         <input type="number" name="maxpontos" id="txtMaxPontos" min="0" value="10">
         &nbsp;pontos.</label>
         <legend>Para "modo infinito" deixe a caixa acima com o número 0 (zero).</legend>
-        <button type="button" class="settings-button">Jogar!</button>
+        <button type="button" class="button-panels settings-button" onclick="voltarProJogo()">Jogar!</button>
       </form>
+    </div>
+  </div>
+  <div id="winner-bg" class="winner">
+    <div id="winner-body" class="winner show">
+      &nbsp;
     </div>
   </div>
   <header>
@@ -43,7 +48,7 @@
             info
           </span>
         </a>
-        <a onclick="javascript:alert('Em breve estará disponível');" class="botao-header" title="Configurações">
+        <a onclick="abrirConfiguracoes()" class="botao-header" title="Configurações">
           <span class="material-icons-round">
             settings
           </span>
@@ -82,7 +87,7 @@
           <h2 id="vencedor-jogo">Boa sorte!<br>Toque em um dos botões</h2>
         </button>
         <div class="escolha escolha-usuario" id="painel-usuario">
-          <h2>Você</h2>
+          <h2 id="nome-usuario-painel">Você</h2>
           <p id="escolha-usuario">&nbsp;</p>
         </div>
         <div class="escolha escolha-computador" id="painel-computador">
